@@ -22,7 +22,12 @@ function savePlan() {
     });
 }
 savePlan();
-
+var saveBtn = $(".saveBtn");
+saveBtn.on("click", function(){
+    var time = $(this).parent().attr("id");
+    var schedule = $(this).sibilings(".schedule".val());
+    localStorage.setItem(time, schedule);
+});
 
 function tenses() {
 
