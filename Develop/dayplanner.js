@@ -30,7 +30,17 @@ saveBtn.on("click", function(){
 });
 
 function tenses() {
-
+    hour = time.hours();
+    $(".time-block").each(function() {
+        var inhour = parseInt($(this).attr("id"));
+        if (inhour > hour) {
+            $(this).addClass("later");
+        }else if (inhour === hour){
+            $(this).addClass("now");
+        } else {
+            $(this).addClass("before");
+        }
+    });
 }
 tenses();
 
