@@ -12,7 +12,14 @@ var hour6 = $('#6');
 var time = period();
 
 function savePlan() {
-
+    $("currentDay").text(period().format("dddd.MMMM Do UYYYY"));
+    $(".time-block").each(function() {
+        var id = $(this).attr("id");
+        var schedule = localStorage.getItem(id);
+        if (schedule !== null) {
+            $(this).children(".schedule").val(schedule);
+        }
+    });
 }
 savePlan();
 
