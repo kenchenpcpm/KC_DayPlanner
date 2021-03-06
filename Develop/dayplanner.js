@@ -9,10 +9,10 @@ var hour3 = $('#3');
 var hour4 = $('#4');
 var hour5 = $('#5');
 var hour6 = $('#6');
-var time = period();
+var time = moment();
 
 function savePlan() {
-    $("currentDay").text(period().format("dddd.MMMM Do UYYYY"));
+    $("currentDay").text(moment().format("dddd.MMMM Do UYYYY"));
     $(".time-block").each(function() {
         var id = $(this).attr("id");
         var schedule = localStorage.getItem(id);
@@ -29,7 +29,7 @@ saveBtn.on("click", function(){
     localStorage.setItem(time, schedule);
 });
 
-function tenses() {
+function beforenowlater() {
     hour = time.hours();
     $(".time-block").each(function() {
         var inhour = parseInt($(this).attr("id"));
@@ -42,5 +42,5 @@ function tenses() {
         }
     });
 }
-tenses();
+beforenowlater();
 
